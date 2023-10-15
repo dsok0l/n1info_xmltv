@@ -18,7 +18,7 @@ Authorization: Bearer {{token}}
 GET /v1/public/events/epg
     ?cid=448
     &fromTime=1697320800000
-    &toTime=1697407199999
+    &toTime=1697757515000
     &communityIdentifier=n1_hr
     &languageId=181
 Host: {{hostname}}

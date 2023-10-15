@@ -1,0 +1,5 @@
+research Kodi EPG formats and needed file(s)  
+research xmltv file format  
+find a suitable python library for creating / editing xmltv files  
+requirements.txt  
+add args for main(), if no arguments default to fetch 5 days  

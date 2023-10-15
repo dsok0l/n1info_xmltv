@@ -28,10 +28,11 @@ def fetch_epg(fromTime, toTime, session=None):
               }
     response = session.get(url, headers=headers, params=params)
     if response.ok:
-        print(response.content)
+        return json.loads(response.content)
     else:
         raise LookupError(response.raw)
 
 
 if __name__ == '__main__':
-    fetch_epg("1697320800000", "1697407199999")
+    epg_json = fetch_epg("1697320800000", "1697407199999")
+    print(epg_json)

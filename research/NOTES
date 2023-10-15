@@ -1,2 +1,3 @@
-Looks like auth token is fixed, for now it's to be hardcoded
-Channel ID (cid) we can get from /v2/public/channels, but its ok to hadcode for now
+Looks like auth token is fixed, for now it is be hardcoded
+Channel ID (cid) we can get from /v2/public/channels, but also hardcoded for now
+EPG fetch works ok for multiple days for single query, tested up to 5 days (enough for this usecase) 
