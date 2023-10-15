@@ -1,4 +1,7 @@
 # N1.info EPG scraper
   
-The goal is to extract program guide from https://n1info.hr/tv-program/ and save it into Kodi compatibile format (xmltv).  
-It will be realised as python script, and used for scheduled (daily) sync.
+## WORK IN PROGRESS!
+  
+### Goal  
+Extract program guide from https://n1info.hr/tv-program/ and save it into Kodi compatibile format (xmltv).  
+Implement it as a single python script to be used for scheduled (daily) sync.

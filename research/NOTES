@@ -1,0 +1,2 @@
+Looks like auth token is fixed, for now it's to be hardcoded
+Channel ID (cid) we can get from /v2/public/channels, but its ok to hadcode for now

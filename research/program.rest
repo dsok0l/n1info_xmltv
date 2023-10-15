@@ -1,0 +1,27 @@
+## using vscode plugin humao.rest-client
+
+@hostname = api-web.ug-be.cdn.united.cloud
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidWMtaW5mby1zZXJ2aWNlIl0sInNjb3BlIjpbInJlYWQiXSwiZXhwIjoxNjk3NDQyODczLCJhdXRob3JpdGllcyI6WyJST0xFX1BVQkxJQ19FUEciXSwianRpIjoiQ2xmZldvVE53R0taTi1rWDFxQVhkM25iOUVZIiwiY2xpZW50X2lkIjoiMjdlMTFmNWUtODhlMi00OGU0LWJkNDItOGUxNWFiYmM2NmY1In0.fhxlIAP8Kit6UzYzWyt2_ZcHgjmzVt9Az0PZ8GqQ5kA
+
+
+### channel list 
+GET /v2/public/channels
+    ?imageSize=S
+    &communityIdentifier=n1_hr
+    &languageId=181
+Host: {{hostname}}
+Accept: application/json
+X-UCP-TIME-FORMAT: timestamp
+Authorization: Bearer {{token}}
+
+### epg
+GET /v1/public/events/epg
+    ?cid=448
+    &fromTime=1697320800000
+    &toTime=1697407199999
+    &communityIdentifier=n1_hr
+    &languageId=181
+Host: {{hostname}}
+Accept: application/json
+X-UCP-TIME-FORMAT: timestamp
+Authorization: Bearer {{token}}
