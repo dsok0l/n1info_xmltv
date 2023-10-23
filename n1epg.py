@@ -2,6 +2,7 @@
 
 import requests
 import json
+from datetime import datetime, timedelta
 
 
 HOSTNAME = "api-web.ug-be.cdn.united.cloud"
@@ -10,6 +11,9 @@ EPG_PATH = "/v1/public/events/epg"
 COMMUNITY_ID = "n1_hr"
 LANG_ID = "181"  # hr
 CHANNEL_ID = "448"  # N1 HD (HR)
+LIMIT_DAYS = 5  # TODO: add as command parameter
+now = datetime.now()
+increment = timedelta(days=LIMIT_DAYS)
 
 
 def fetch_epg(fromTime, toTime, session=None):
@@ -28,11 +32,25 @@ def fetch_epg(fromTime, toTime, session=None):
               }
     response = session.get(url, headers=headers, params=params)
     if response.ok:
-        return json.loads(response.content)
+        return response.content
     else:
         raise LookupError(response.raw)
 
 
+def day_start_timestamp(datetime_obj):
+    day_start = datetime_obj.replace(hour=0, minute=0, second=0, microsecond=0)
+    return int(day_start.timestamp() * 1000)
+
+
+def day_end_timestamp(datetime_obj):
+    day_start = datetime_obj.replace(hour=23, minute=59, second=59, microsecond=999999)
+    return int(day_start.timestamp() * 1000)
+
+
+
+
 if __name__ == '__main__':
-    epg_json = fetch_epg("1697320800000", "1697407199999")
+    epg_json = fetch_epg(day_start_timestamp(now),
+                         day_end_timestamp(now + increment))
     print(epg_json)
+    
